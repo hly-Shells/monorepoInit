@@ -52,6 +52,13 @@ validate_bool() {
   [[ "$v" == "true" || "$v" == "false" ]]
 }
 
+trim_spaces() {
+  local s="$1"
+  s="${s#"${s%%[![:space:]]*}"}"
+  s="${s%"${s##*[![:space:]]}"}"
+  printf '%s' "$s"
+}
+
 if [[ "$INTERACTIVE" == "true" ]]; then
   read -r -p "Project name [$PROJECT_NAME]: " input || true
   PROJECT_NAME="${input:-$PROJECT_NAME}"
@@ -104,6 +111,7 @@ mkdir -p apps packages scripts
 
 IFS=',' read -r -a app_array <<< "$APPS"
 for app in "${app_array[@]}"; do
+  app="$(trim_spaces "$app")"
   case "$app" in
     admin) mkdir -p apps/admin/src ;;
     h5) mkdir -p apps/h5/src ;;
@@ -116,7 +124,13 @@ for app in "${app_array[@]}"; do
         native) mkdir -p apps/mobile/android apps/mobile/ios apps/mobile/harmony ;;
       esac
       ;;
-    *) echo "Skipping unknown app key: $app" ;;
+    "")
+      ;;
+    *)
+      echo "Unknown app key: $app"
+      echo "Allowed app keys: admin,h5,mp,mobile"
+      exit 1
+      ;;
   esac
 done
 
