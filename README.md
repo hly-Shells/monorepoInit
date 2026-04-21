@@ -17,7 +17,7 @@
 Install globally:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<your-org-or-user>/monorepo-ci/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/hly-Shells/monorepoInit/main/install.sh | bash
 ```
 
 Then run:
@@ -61,7 +61,7 @@ Non-interactive example:
 
 ## Suggested GitHub Repo Setup
 
-1. Repository name: `monorepo-ci`
+1. Repository name: `monorepoInit` (current) or rename to `monorepo-ci` (recommended for clearer tool naming)
 2. Add tags/topics:
    - `monorepo`
    - `scaffold`

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_RAW_URL="${REPO_RAW_URL:-https://raw.githubusercontent.com/<your-org-or-user>/monorepo-ci/main/create-monorepo.sh}"
+REPO_RAW_URL="${REPO_RAW_URL:-https://raw.githubusercontent.com/hly-Shells/monorepoInit/main/create-monorepo.sh}"
 INSTALL_DIR="${INSTALL_DIR:-$HOME/.local/bin}"
 TARGET="$INSTALL_DIR/monorepo-ci"
 
