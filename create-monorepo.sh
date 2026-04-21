@@ -8,12 +8,12 @@ Usage:
 
 Options:
   --project-name NAME           Project directory name (default: multi-platform-project)
-  --package-manager PM          npm|pnpm|yarn (default: npm)
+  --package-manager PM          npm|pnpm|yarn (default: yarn)
   --apps LIST                   Comma-separated: admin,h5,mp,mobile (default: admin,h5,mp,mobile)
   --include-api BOOL            true|false (default: true)
-  --mobile-stack TYPE           rn|flutter|native (default: rn)
+  --mobile-stack TYPE           rn|flutter|native (default: native)
   --include-openspec BOOL       true|false (default: true)
-  --include-github-ci BOOL      true|false (default: true)
+  --include-github-ci BOOL      true|false (default: false)
   --interactive BOOL            true|false (default: true)
   -h, --help                    Show this help
 
@@ -24,12 +24,12 @@ EOF
 }
 
 PROJECT_NAME="multi-platform-project"
-PACKAGE_MANAGER="npm"
+PACKAGE_MANAGER="yarn"
 APPS="admin,h5,mp,mobile"
 INCLUDE_API="true"
-MOBILE_STACK="rn"
+MOBILE_STACK="native"
 INCLUDE_OPENSPEC="true"
-INCLUDE_GITHUB_CI="true"
+INCLUDE_GITHUB_CI="false"
 INTERACTIVE="true"
 
 while [[ $# -gt 0 ]]; do

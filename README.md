@@ -50,12 +50,12 @@ Non-interactive example:
 ## CLI Options
 
 - `--project-name NAME` default: `multi-platform-project`
-- `--package-manager PM` values: `npm|pnpm|yarn`
+- `--package-manager PM` default: `yarn`, values: `npm|pnpm|yarn`
 - `--apps LIST` values: `admin,h5,mp,mobile`
 - `--include-api BOOL` values: `true|false`
-- `--mobile-stack TYPE` values: `rn|flutter|native`
+- `--mobile-stack TYPE` default: `native`, values: `rn|flutter|native`
 - `--include-openspec BOOL` values: `true|false`
-- `--include-github-ci BOOL` values: `true|false`
+- `--include-github-ci BOOL` default: `false`, values: `true|false`
 - `--interactive BOOL` values: `true|false`
 - `-h, --help`
 
